@@ -4,10 +4,10 @@ metadata:
   name: pysureset
 spec:
   revisionHistoryLimit: 4
-  replicas: 4
+  replicas: 20
   selector:
     matchLabels:
-      app: pyapp
+      app: nginx
   updateStrategy:
     type: RollingUpdate
     rollingUpdate:
@@ -15,10 +15,10 @@ spec:
   template:
     metadata:
       labels:
-        app: pyapp
+        app: nginx
     spec:
       containers:
-      - name: pyapp
-        image: brokenleg/pyapp:1.3
+      - name: nginx
+        image: nginx:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 80

@@ -1,0 +1,11 @@
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  name: myconfigmap
+data:
+  MYHOST: localhost:2022
+  database: mysql
+  database_uri: mysql://localhost:3306
+  keys: | 
+    image.public.key=1024
+    rsa.public.key=111

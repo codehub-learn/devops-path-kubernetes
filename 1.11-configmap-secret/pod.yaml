@@ -1,0 +1,20 @@
+kind: Pod 
+apiVersion: v1 
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      envFrom:
+        - configMapRef:
+            name: myconfigmap
+      volumeMounts:
+      - name: config-volume
+        mountPath: /app/config.yaml
+        subPath: config.yaml
+  volumes:
+    - name: config-volume
+      configMap:
+        name: file-config
+      

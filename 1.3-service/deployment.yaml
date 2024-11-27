@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mypod
+  name: mydeployment
   labels:
     env: dev
 spec:
@@ -23,15 +23,6 @@ spec:
     spec:
       containers:
         - name: pyapp
-          image: brokenleg/pyapp:3.6
+          image: debian:12-slim
           ports:
-          - containerPort: 8000
-          volumeMounts:
-            - name: mytext
-              mountPath: /tmp/mytext.txt
-
-  volumes: 
-    - name: mytext
-      configMap: 
-        name: manifest-example
-
+          - containerPort: 80

@@ -4,7 +4,7 @@ metadata:
   name: local-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 10Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
@@ -12,4 +12,4 @@ spec:
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-path
   hostPath:
-    path: “/tmp/data”
+    path: "/tmp/data"

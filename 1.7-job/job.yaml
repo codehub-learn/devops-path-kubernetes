@@ -4,7 +4,7 @@ metadata:
   name: pyjob
 spec:
   backoffLimit: 6
-  completions: 2
+  completions: 20
   parallelism: 2
   template:
     spec:

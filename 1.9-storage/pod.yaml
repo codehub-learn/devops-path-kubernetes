@@ -15,6 +15,7 @@ spec:
     command: ["/bin/sh", "-c"]
     args:
       - while true; do
+          echo "Adding date now";
           date >> /html/index.html;
           sleep 5;
         done
